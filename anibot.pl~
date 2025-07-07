@@ -27,15 +27,15 @@ and(A, B, C, D):- A, B, C, D.
  * anime/1 acierta si X es un animé
  */
 anime(X) :- member(
-    X,
+    X, 
     [
-        "DOOM",
-        "Resident Evil 4 Remake",
-        "Red dead Redemption 2",
-        "Dragon Ball Budokai TEnkaichi 3",
-        "Forza Horizon 4",
-        "God of war",
-        "The last of us Part 1",
+        "Dragon Ball",
+        "Naruto",
+        "Bleach",
+        "HunterXHunter",
+        "Hamtaro",
+        "Full Metal Alchemist",
+        "Suzumiya Haruhi No Yuutsu",
         "Sword Art Online",
         "Another",
         "Death Note",
@@ -56,7 +56,7 @@ anime(X) :- member(
 		"Accel World"
     ]
 ).
-
+    
 /**
  * genero(X:string) es determinado
  *
@@ -85,7 +85,7 @@ genero(X) :- member(
  *
  * generoAnime/2 acierta si Y es la lista de géneros de un anime;
  *               si no se pasa, Y se unifica con la lista de géneros del animé X;
- *               si no se pasa, X se unifica con algún animé cuya
+ *               si no se pasa, X se unifica con algún animé cuya 
  *               lista de géneros sea Y.
  */
 generoAnime("Naruto", ["Shounen","Aventura"]).
@@ -119,7 +119,7 @@ generoAnime("Accel World", ["Mecha", "Aventura"]).
  *
  * rating/2 acierta si Y es la puntuación entre 1 y 5 del animé X;
  *          si no se pasa, Y se unifica con la puntuación del animé X;
- *          si no se pasa, X se unifica con algún animé cuya
+ *          si no se pasa, X se unifica con algún animé cuya 
  *          puntuación sea Y.
  */
 rating("Dragon Ball", 3).
@@ -153,7 +153,7 @@ rating("Accel World", 4).
  *
  * popularidad/2 acierta si Y es la popularidad entre 1 y 10 del animé X;
 *                si no se pasa, Y se unifica con la popularidad del animé X;
-*                si no se pasa, X se unifica con algún animé cuya
+*                si no se pasa, X se unifica con algún animé cuya 
 *                popularidad sea Y.
  */
 popularidad("Dragon Ball", 7).
@@ -184,12 +184,12 @@ popularidad("Accel World", 7).
 
 /**
  * ratingPopularidad/2
- *
- * ratingPopularidad(A, X) acierta si el animé A
+ * 
+ * ratingPopularidad(A, X) acierta si el animé A 
  * tiene un valor sumado (previamente calculado) de rating
  * y puntuación X
  */
-ratingPopularidad(A, X):-
+ratingPopularidad(A, X):- 
 	anime(A),
 	popularidad(A, P),
 	rating(A, R),
@@ -234,7 +234,7 @@ anime_segun_ratingPopularidad(RP, L):-
 
 /**
  * tiene_genero/2
- *
+ * 
  * Si G es un género válido y A un animé válido, acierta si el animé
  * A tiene a G entre sus géneros.
  */
@@ -259,14 +259,14 @@ anime_segun_genero(G, L):-
 
 /**
  * chat/2
- *
+ * 
  * es_mensaje(X, Y) acierta si Y es una lista de mensajes de tipo X.
  *
  * Uso auxiliar pasando un parámetro tipo, para obtener una lista de
  * mensajes de dicho tipo.
  */
 es_mensaje(
-    "bienvenida",
+    "bienvenida", 
     [
         "Yuki:- Hola, soy Yuki. ¿Quieres hablar?",
         "Yuki:- *se asoma, tímidamente* Hola...",
@@ -418,7 +418,7 @@ es_mensaje(
 		"Yuki:- Mi recomendación para ti: ",
 		"Yuki:- Hmm, podrías ver ",
 		"Yuki:- Acá tienes una opción: ",
-		"Yuki:- Entre nosotros los bots, es famoso "
+		"Yuki:- Entre nosotros los bots, es famoso " 
 	]
 ).
 
@@ -428,7 +428,7 @@ es_mensaje(
 
 /**
  * acceder/3
- *
+ * 
  * acceder(L, I, M) acierta si M es el elemento con índice I (indexado en 1)
  * en la lista L.
  *
@@ -439,7 +439,7 @@ acceder(L, I, X):- R is I-1, nth0(R, L, X).
 /**
  * member_string/2
  * member_string(C, S) es verdad si C es un caracter del
- * string S.
+ * string S. 
  */
 member_string(C, S):- string_chars(S, SC), member(C, SC).
 
@@ -461,7 +461,7 @@ es_mayuscula(C) :-
 
 /**
  * obtener_mensaje_aleatorio/2
- *
+ * 
  * obtener_mensaje_aleatorio(L, M) unifica en M un mensaje obtenido
  * aleatoriamene entre los existentes en la lista L. Más generalmente,
  * unifica en M un elemento obtenido aleatoriamente en la lista L.
@@ -499,13 +499,13 @@ leer(M):-
  * imprimir/1
  *
  * imprimir(M) imprime un mensaje en pantalla; seguidamente,
- * imprime un salto de línea y hace flush_output para asegurar que
+ * imprime un salto de línea y hace flush_output para asegurar que 
  * el orden de operaciones de I/O sea el esperado
  */
 imprimir(M):-
     write_term(
-        M,
-        [
+        M, 
+        [ 
             portray(true),
             numbervars(true),
             quoted(false)
@@ -518,13 +518,13 @@ imprimir(M):-
  * imprimir_prompt/0
  *
  * imprimir_prompt muestra en pantalla una decoración de tipo
- * prompt para el usuario, ideal para ser utilizado justo antes de
+ * prompt para el usuario, ideal para ser utilizado justo antes de 
  * solicitar input, ya que no imprime un salto de línea
  */
 imprimir_prompt:-
     write_term(
-        "Yo:- ",
-        [
+        "Yo:- ", 
+        [ 
             portray(false),
             numbervars(true),
             quoted(false)
@@ -570,7 +570,7 @@ es_despedida(M):-
 		((es_palabra_de("hasta", M); es_palabra_de("Hasta", M)), es_palabra_de("luego", M));
 		es_palabra_de("quit", M); es_palabra_de("Quit", M)
 	).
-
+  
 /**
  * es_clima/1
  *
@@ -640,7 +640,7 @@ es_rating(M):-
 
 /**
  * es_genero/1
- *
+ * 
  * es_genero(M) acierta si la string M contiene alguna palabra clave
  * que identifique una consulta por género de anime
  */
@@ -719,7 +719,7 @@ es_saludo(M):-
 
 /**
  * es_rating_alto_popularidad_baja/1
- *
+ * 
  * es_rating_alto_popularidad_baja(M) acierta si la string M contiene alguna
  * palabra clave que identifique la consulta por animé con popularidad baja
  * pero rating alto.
@@ -735,7 +735,7 @@ es_rating_alto_popularidad_baja(M):-
 
 /**
  * es_consultar_anime_orden/1
- *
+ * 
  * es_consultar_anime_orden(M) acierta si la string M contiene alguna
  * palabra clave que identifique la consulta por animés ordenados
  */
@@ -791,7 +791,7 @@ existe_anime_con_num_rating(X) :- anime_segun_rating(X, L), length(L, Tam), Tam 
 
 /**
  * existe_anime_con_num_popularidad/1
- *
+ * 
  * existe_anime_con_num_popularidad(N), si recibe un número N, determina si existe algún animé
  * con ese número de popularidad
  */
@@ -809,7 +809,7 @@ existe_anime_con_lista_popularidad([X | Xs]) :- existe_anime_con_num_popularidad
 /**
  * parsear_popularidad/2
  *
- * parsear_popularidad(M, P) determina qué palabras clave en la frase M corresponden a
+ * parsear_popularidad(M, P) determina qué palabras clave en la frase M corresponden a 
  * qué tipo de valores de popularidad, entre 1 y 10, y unifica P con la lista de estos
  * valores de acuerdo a lo establecido en el enunciado.
  *
@@ -825,9 +825,9 @@ parsear_popularidad(_, P):- !, P = [6, 7].
 
 /**
  * parsear_rating/2
- *
+ * 
  * parsear_rating(M, P) determina qué palabras clave en la frase M corresonden a qué
- * nivel de rating (estrellas) de un animé, entre 1 y 5, y unifica P con el valor
+ * nivel de rating (estrellas) de un animé, entre 1 y 5, y unifica P con el valor 
  * que corresponda, siguiendo el orden especificado en los detalles de implementación.
  */
 parsear_rating(M, P):- es_palabra_de("muy", M), es_palabra_de("bueno", M), !, P = 5.
@@ -838,7 +838,7 @@ parsear_rating(_, P):- !, P = 3.
 
 /**
  * parsear_tipo_clasificacion/2
- *
+ * 
  * parsear_tipo_clasificacion(M, O) determina bajo qué criterios quiere ordenar el usuario
  * los anime que solicita; por defecto, se ordena solo por rating.
  */
@@ -849,12 +849,12 @@ parsear_tipo_clasificacion(_, "rating").
 
 /**
  * parsear_orden/2
- *
+ * 
  * parsear_orden(M, O) determina en qué orden se debe mostrar una consulta según lo
  * solicitado en la frase, hallando la primera palabra entre mayor y menor en la frase
  * y asumiendo que ahí comienza su orden. Por defecto, se ordena de mayor a menor.
  */
-parsear_orden(M, "menor"):-
+parsear_orden(M, "menor"):- 
 	es_palabra_de("menor", M),
 	es_palabra_de("mayor", M),
 	separar_frase(M, L),
@@ -865,7 +865,7 @@ parsear_orden(_, "mayor").
 
 /**
  * parsear_generos/2
- *
+ * 
  * parsear_generos(M, G) determina qué palabras de M corresponden a géneros de animé
  * válidos y los unifica en una lista en G.
  */
@@ -875,7 +875,7 @@ parsear_generos(M, G):-
 
 /**
  * parsear_estrellas/2
- *
+ * 
  * parsear_estrellas(M, N) ubica la palabra 'estrella' (o derivadas) en una frase y
  * retorna un casteo a entero de la palabra inmediatamente anterior.
  */
@@ -887,14 +887,14 @@ parsear_estrellas(M, N):-
 		nth0(I, F, "Estrella"), !;
 		nth0(I, F, "Estrellas", !)
 	),
-	I2 is I-1,
-	I2 >= 0,
+	I2 is I-1, 
+	I2 >= 0, 
 	nth0(I2, F, Ns),
 	number_codes(N, Ns).
 
 /**
  * parsear_popularidad_agregar/2
- *
+ * 
  * parsear_popularidad_agregar(M, N) ubica la palabra 'popularidad' (o derivadas) en una frase y
  * retorna un casteo a entero de la palabra inmediatamente siguiente.
  */
@@ -904,7 +904,7 @@ parsear_popularidad_agregar(M, N):-
 		nth0(I, F, "popularidad"), !;
 		nth0(I, F, "popular"), !
 	),
-	I2 is I+1,
+	I2 is I+1,  
 	nth0(I2, F, Ns),
 	number_codes(N, Ns).
 
@@ -948,7 +948,7 @@ imprimir_anime_por_popularidad([X|Xs]):-
  * imprimir_anime_por_rating/1
  *
  * imprimir_anime_por_rating(L) recibe una lista de enteros correspondientes a valores
- * de estrellas de rating e imprime secuencialmente recomendaciones de animé con esos
+ * de estrellas de rating e imprime secuencialmente recomendaciones de animé con esos 
  * valores, incluyendo todos sus datos.
  */
 imprimir_anime_por_rating(X):-
@@ -999,7 +999,7 @@ parsear_anime([Cabeza | Cola], P) :-
 	% (Cabeza == "agrega"; Cabeza == "Agrega"),
 	es_agregar(Cabeza),
 	obtener_anime(Cola, P, 0).
-
+	
 /**
  * obtener_anime/2
  * obtener_anime(M, P) es verdad si P es el título de un anime,
@@ -1011,7 +1011,7 @@ obtener_anime([], [], Parseando) :-
 	Parseando is 1.
 
 % si ya se terminó de parsear
-obtener_anime([Cabeza | _], [], 1) :-
+obtener_anime([Cabeza | _], [], 1) :- 
 	cabeza_string(Cabeza, C),
 	\+(es_mayuscula(C)).
 
@@ -1048,7 +1048,7 @@ listar_por_rating_desde_mensaje(M):-
 
 /**
  * listar_rating_alto_popularidad_baja/0
- *
+ * 
  * listar_rating_alto_popularidad_baja imprime en pantalla las sugerencias de animé
  * que tengan rating alto (definido como ratings en el rango [4, 5], ambos inclusive) y
  * popularidad baja (definido como valores de popularidad en el rango [1, 4], ambos inclusive).
@@ -1078,8 +1078,8 @@ listar_rating_alto_popularidad_baja:-
 
 /**
  * filtrar_anime_genero/2
- *
- * filtrar_anime_genero(G, L), para una lista de géneros G, unifica en L todos los
+ * 
+ * filtrar_anime_genero(G, L), para una lista de géneros G, unifica en L todos los 
  * animé que pertenecen a al menos algún género perteneciente a G.
  */
 filtrar_anime_genero(G, L):-
@@ -1087,21 +1087,21 @@ filtrar_anime_genero(G, L):-
 
 /**
  * filtrar_lista_orden/3
- *
+ * 
  * filtrar_lista_orden(L0, O, Lf), dado un orden O ("mayor" o "menor", por defecto asume "mayor"),
  * ordena los elementos de la lista L0 en el orden introducido, ASUMIENDO que la lista L0 a primeras
  * está ordenada de mayor a menor.
- */
+ */ 
 filtrar_lista_orden(L0, "menor", Lf):- Lf = L0.
 filtrar_lista_orden(L0, _, Lf):- reverse(L0, Lf).
 
 /**
  * filtrar_lista_clasificacion/3
- *
+ * 
  * filtrar_lista_clasificacion(L0, C, Lf) toma una lista inicial de animé,
  * los ordena de mayor a menor según un criterio C y unifica la nueva lista
  * de orden en Lf.
- *
+ * 
  * NOTA: Se crea un predicado por cada criterio de filtrado posible. Se asume
  * por defecto que el criterio es 'rating'.
  */
@@ -1166,7 +1166,7 @@ filtrar_lista_clasificacion(L0, _, Lf):-
 
 /**
  * consultar_anime_por_orden/1
- *
+ * 
  * consultar_anime_por_orden(M) interpreta la frase M como una consulta de animé
  * por géneros, según un criterio de clasificación y con un orden dado (por defecto,
  * el criterio es 'rating' y el orden de 'mayor' a menor), y muestra las sugerencias
@@ -1183,11 +1183,11 @@ consultar_anime_por_orden(M):-
 	length(Lf, Tam), !,
 	(
 		(
-			Tam > 0,
+			Tam > 0, 
 			imprimir_sugerencias_de_anime(Lf),
 			imprimir("Yuki:- ¿Qué tal te parecen mis sugerencias?")
 		);
-		(
+		(	
 			Tam == 0,
 			imprimir("Yuki:- No encontré animé con tus filtros de búsqueda. ¿Me ayudas con eso?")
 		)
@@ -1196,7 +1196,7 @@ consultar_anime_por_orden(M):-
 
 /**
  * listar_por_genero/1
- *
+ * 
  * listar_por_genero(M) interpreta en la frase M uno o varios géneros de animé, halla
  * los animé que pertenezcan a alguno de estos géneros (de manera inclusiva, basta con que
  * pertenezca a uno de ellos para ser considerado) y los imprime como sugerencias.
@@ -1208,11 +1208,11 @@ listar_por_genero(M):-
 	length(Lf, Tam), !,
 	(
 		(
-			Tam > 0,
+			Tam > 0, 
 			imprimir_sugerencias_de_anime(Lf),
 			imprimir("Yuki:- ¡Pero no te encasilles en unos pocos géneros, abre tu mente!")
 		);
-		(
+		(	
 			Tam == 0,
 			imprimir("Yuki:- No encontré animé con tus filtros de búsqueda. ¿Me ayudas con eso?")
 		)
@@ -1221,9 +1221,9 @@ listar_por_genero(M):-
 
 /**
  * consultar_anime_por_genero_y_rating/1
- *
- * consultar_anime_por_genero_y_rating(M) interpreta en la frase M uno o varios géneros
- * de animé y un valor de estrellas de rating, halla los animé que pertenezcan a alguno de estos géneros
+ * 
+ * consultar_anime_por_genero_y_rating(M) interpreta en la frase M uno o varios géneros 
+ * de animé y un valor de estrellas de rating, halla los animé que pertenezcan a alguno de estos géneros 
  * (de manera inclusiva, basta con pertenezca a uno de ellos para ser considerado) y que, además, cuente
  * con la cantidad de estrellas dada, y los imprime como sugerencias.
  */
@@ -1236,11 +1236,11 @@ consultar_anime_por_genero_y_rating(M):-
 	length(Lf, Tam), !,
 	(
 		(
-			Tam > 0,
+			Tam > 0, 
 			imprimir_sugerencias_de_anime(Lf),
 			imprimir("Yuki:- ¡Ojalá esto te sirva para que conozcas series nuevas!")
 		);
-		(
+		(	
 			Tam == 0,
 			imprimir("Yuki:- No encontré animé con tus filtros de búsqueda. ¿Me ayudas con eso?")
 		)
@@ -1253,7 +1253,7 @@ consultar_anime_por_genero_y_rating(M):-
 
 /**
  * dar_bienvenida/0
- *
+ * 
  * dar_bienvenida muestra en pantalla un mensaje de bienvenida
  * escogido aleatoriamente entre los mensajes existentes.
  */
@@ -1266,18 +1266,18 @@ dar_bienvenida:-
  *
  * responder(M) determina si M es un mensaje apropiado de un
  * tema conocido por el bot, responde la entrada dada y, en caso de
- * ser una despedida, termina la ejecución; en cas contrario, falla
+ * ser una despedida, termina la ejecución; en cas contrario, falla 
  * (para saltar al próximo predicado)
  */
 responder(M):-
     obtener_tema(M, T), !,
     (
-	(tema_conversacional(T), obtener_mensaje_aleatorio(T, D), imprimir(D));
-	(not(tema_conversacional(T)))
+    	(tema_conversacional(T), obtener_mensaje_aleatorio(T, D), imprimir(D));
+    	(not(tema_conversacional(T)))
     ),
     (
 		(
-			T == "agregar",
+			T == "agregar", 
 			es_nuevo_anime(M, Titulo),
 			parsear_generos(M, Generos),
 			parsear_estrellas(M, Rating),
@@ -1290,7 +1290,7 @@ responder(M):-
 
 			(
 				(
-					es_palabra_de("popularidad", M),
+					es_palabra_de("popularidad", M), 
 					parsear_popularidad_agregar(M, N),
 					assertz(popularidad(TituloString, N))
 				);
@@ -1307,12 +1307,12 @@ responder(M):-
 		(T == "popularidad", listar_por_popularidad_desde_mensaje(M));
 		(T == "rating", listar_por_rating_desde_mensaje(M));
 		(T == "genero", listar_por_genero(M));
-	(T == "despedida", halt);
-	(T == "desconocido",
-	 string_concat("Yuki:- No entendí esto: ", M, Mf),
-	 imprimir(Mf),
-	 fail
-	)
+    	(T == "despedida", halt);
+    	(T == "desconocido", 
+    	 string_concat("Yuki:- No entendí esto: ", M, Mf),
+    	 imprimir(Mf),
+    	 fail
+    	)
     ).
 
 % ==========================================================================
@@ -1323,7 +1323,7 @@ responder(M):-
  * conversar/0
  *
  * conversar repite en un ciclo infinito (por backtracking) una lógica sencilla
- * de conversación bilateral: se lee un mensaje del usuario y se responde por
+ * de conversación bilateral: se lee un mensaje del usuario y se responde por 
  * parte del bot.
  */
 conversar:-
@@ -1335,7 +1335,7 @@ conversar:-
 
 /**
  * chat/0
- *
+ * 
  * chat muestra un mensaje de bienvenida en pantalla e inicia
  * el ciclo de la conversación con el bot
  */
