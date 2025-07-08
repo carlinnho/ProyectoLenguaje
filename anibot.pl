@@ -41,7 +41,7 @@ juego(X) :- member(
 		"Bioshock Saga",
 		"Half Life Saga",
 		"Skyrim",
-		"Red Dead Redemption,
+		"Red Dead Redemption",
 		"Portal Saga",
 		"Doki Doki LIterature Club",
 		"Clair Obscure: Expedition 33"
@@ -125,7 +125,7 @@ puntuacion("The Last of Us Part I", 88).
 puntuacion("Sword Art Online", 70).
 puntuacion("FIFA 24", 80).
 puntuacion("Batman Arkham Trilogy", 87).
-puntuacion("Marvel SpiderMan Remastered", 87).
+puntuacion("Marvel Spiderman Remastered", 87).
 puntuacion("Dark Souls 3", 89).
 puntuacion("Elden Ring", 96).
 puntuacion("Left 4 Dead 2", 89).
