@@ -1,13 +1,4 @@
-/** AniBot
-
-Este módulo incluye la implementación de un bot de Prolog
-escrito en el dialecto SWI-Prolog que reconoce lenguaje natural
-y permite establecer una conversación sobre series de animé,
-géneros, ratings y popularidad.
-
-@author Gustavo Castellanos (14-10192)
-@author Andrés Ignacio Torres (14-11082)
-@license MIT
+/** GameBot
 */
 
 :- use_module(library(random)).
@@ -26,7 +17,7 @@ and(A, B, C, D):- A, B, C, D.
  *
  * anime/1 acierta si X es un animé
  */
-anime(X) :- member(
+juego(X) :- member(
     X,
     [
         "DOOM",
@@ -38,22 +29,22 @@ anime(X) :- member(
         "The last of us Part 1",
         "Sword Art Online",
         "FIFA 24",
-        "Batman Arkham",
-        "arvel SPiderman Remastered",
+        "Batman Arkham Trilogy",
+        "Marvel Spiderman Remastered",
         "Dark souls 3",
         "Elden Ring",
         "Left 4 Dead 2",
         "Mortal Kombat 11",
-        "Yu-Gi-Oh!",
-        "Digimon",
-		"Eureka Seven",
-		"School Days",
-		"Free!",
-		"Cowboy Bebop",
-		"Planet Survival",
-		"Noir",
-		"Gundam",
-		"Accel World"
+        "The legend of Zelda: Ocarina of time",
+        "Grand Thief Auto 4",
+		"Super Mario Galaxy",
+		"Bioshock Saga",
+		"Half Life Saga",
+		"Skyrim",
+		"Red Dead Redemption,
+		"Portal Saga",
+		"Doki Doki LIterature Club",
+		"Clair Obscure: Expedition 33"
     ]
 ).
 
@@ -62,91 +53,95 @@ anime(X) :- member(
  *
  * genero/1 acierta si X es un género de animé
  */
+
 genero(X) :- member(
     X,
     [
         "Aventura",
-        "Shoujo",
-        "Shounen",
-        "Kodomo",
-        "Seinen",
-        "Josei",
-        "Ficción",
-        "Fantasía",
-        "Mecha",
+        "Accion",
+        "Indie",
+        "Un Jugador",
+        "Simulaci�n",
+        "Deportes",
+        "Souls",
+        "Multijugador",
+        "RPG",
         "Sobrenatural",
-        "Magia",
-        "Gore"
+        "Casuales",
+        "Rol"
     ]
 ).
 
 /**
- * generoAnime(X:string, Y:[string])
+ * generoJuego(X:string, Y:[string])
  *
- * generoAnime/2 acierta si Y es la lista de géneros de un anime;
+ * generoJuego/2 acierta si Y es la lista de géneros de un anime;
  *               si no se pasa, Y se unifica con la lista de géneros del animé X;
  *               si no se pasa, X se unifica con algún animé cuya
  *               lista de géneros sea Y.
  */
-generoAnime("Naruto", ["Shounen","Aventura"]).
-generoAnime("Dragon Ball", ["Shounen"]).
-generoAnime("Bleach", ["Shounen", "Sobrenatural"]).
-generoAnime("HunterXHunter", ["Seinen", "Aventura"]).
-generoAnime("Hamtaro", ["Kodomo"]).
-generoAnime("Full Metal Alchemist", ["Shounen", "Magia"]).
-generoAnime("Suzumiya Haruhi No Yuutsu", ["Aventura", "Fantasía", "Sobrenatural"]).
-generoAnime("Sword Art Online", ["Aventura", "Ficción", "Fantasía"]).
-generoAnime("Another", ["Aventura", "Sobrenatural", "Gore"]).
-generoAnime("Death Note", ["Aventura", "Sobrenatural", "Ficción"]).
-generoAnime("Attack On Titan", ["Aventura", "Gore"]).
-generoAnime("Steins;Gate", ["Ficción", "Aventura", "Sobrenatural"]).
-generoAnime("Pokémon", ["Fantasía", "Aventura", "Kodomo"]).
-generoAnime("InuYasha", ["Aventura", "Shoujo"]).
-generoAnime("Kuroshitsuji", ["Shoujo"]).
-generoAnime("Yu-Gi-Oh!", ["Magia", "Ficción", "Shounen"]).
-generoAnime("Digimon", ["Fantasía", "Aventura", "Shounen", "Kodomo"]).
-generoAnime("Eureka Seven", ["Aventura", "Mecha", "Magia"]).
-generoAnime("School Days", ["Shoujo", "Josei"]).
-generoAnime("Free!", ["Shoujo", "Josei"]).
-generoAnime("Cowboy Bebop", ["Ficción", "Aventura"]).
-generoAnime("Planet Survival", ["Ficción", "Aventura", "Shoujo"]).
-generoAnime("Noir", ["Ficción", "Aventura"]).
-generoAnime("Gundam", ["Mecha", "Aventura"]).
-generoAnime("Accel World", ["Mecha", "Aventura"]).
+generoJuego("DOOM", ["Accion", "Sobrenatural", "Un jugador"]).
+generoJuego("Resident Evil 4 Remake", ["Accion", "Sobrenatural", "Un Jugador"]).
+generoJuego("Red dead Redemption 2", ["Aventura", "Accion", "Rol", "Un Jugador"]).
+generoJuego("Dragon Ball Budokai TEnkaichi 3", ["Accion", "Multijugador", "Deportes"]).
+generoJuego("Forza Horizon 4", ["Simulaci�n", "Deportes", "Casuales"]).
+generoJuego("God of war", ["Accion", "Aventura", "Sobrenatural"]).
+generoJuego("The last of us Part 1", ["Aventura", "Accion", "Un Jugador", "Sobrenatural"]).
+generoJuego("Sword Art Online", ["RPG", "Aventura", "Sobrenatural"]).
+generoJuego("FIFA 24", ["Deportes", "Simulaci�n", "Multijugador"]).
+generoJuego("Batman Arkham Trilogy", ["Accion", "Aventura", "Un Jugador"]).
+generoJuego("Marvel Spiderman Remastered", ["Accion", "Aventura", "Un Jugador"]).
+generoJuego("Dark souls 3", ["Souls", "RPG", "Un Jugador"]).
+generoJuego("Elden Ring", ["Souls", "RPG", "Aventura", "Un Jugador"]).
+generoJuego("Left 4 Dead 2", ["Accion", "Multijugador", "Sobrenatural"]).
+generoJuego("Mortal Kombat 11", ["Accion", "Deportes", "Multijugador"]).
+generoJuego("The legend of Zelda: Ocarina of time", ["Aventura", "Rol", "Un Jugador"]).
+generoJuego("Grand Thief Auto 4", ["Accion", "Aventura", "Simulaci�n"]).
+generoJuego("Super Mario Galaxy", ["Aventura", "Casuales", "Un Jugador"]).
+generoJuego("Bioshock Saga", ["Accion", "Sobrenatural", "Un Jugador"]).
+generoJuego("Half Life Saga", ["Accion", "Sobrenatural", "Un Jugador"]).
+generoJuego("Skyrim", ["RPG", "Aventura", "Rol"]).
+generoJuego("Red Dead Redemption", ["Aventura", "Accion", "Un Jugador"]).
+generoJuego("Portal Saga", ["Indie", "Simulaci�n", "Un Jugador"]).
+generoJuego("Doki Doki Literature Club", ["Indie", "Sobrenatural", "Casuales"]).
+generoJuego("Clair Obscure: Expedition 33", ["Aventura", "RPG", "Un Jugador"]).
+
 
 /**
- * rating(X:string, Y:int)
+ * puntuacion(X:string, Y:int)
  *
- * rating/2 acierta si Y es la puntuación entre 1 y 5 del animé X;
+ * puntuacion/2 acierta si Y es la puntuación entre 1 y 5 del animé X;
  *          si no se pasa, Y se unifica con la puntuación del animé X;
  *          si no se pasa, X se unifica con algún animé cuya
  *          puntuación sea Y.
  */
-rating("Dragon Ball", 3).
-rating("Naruto", 1).
-rating("Bleach", 4).
-rating("HunterXHunter", 5).
-rating("Hamtaro", 1).
-rating("Full Metal Alchemist", 4).
-rating("Suzumiya Haruhi No Yuutsu", 3).
-rating("Sword Art Online", 4).
-rating("Another", 4).
-rating("Death Note", 5).
-rating("Attack On Titan", 5).
-rating("Steins;Gate", 2).
-rating("Pokémon", 4).
-rating("InuYasha", 4).
-rating("Kuroshitsuji", 2).
-rating("Yu-Gi-Oh!", 3).
-rating("Digimon", 4).
-rating("Eureka Seven", 3).
-rating("School Days", 2).
-rating("Free!", 2).
-rating("Cowboy Bebop", 5).
-rating("Planet Survival", 4).
-rating("Noir", 3).
-rating("Gundam", 3).
-rating("Accel World", 4).
+puntuacion("DOOM", 85).
+puntuacion("Resident Evil 4 Remake", 94).
+puntuacion("Red Dead Redemption 2", 97).
+puntuacion("Dragon Ball Budokai Tenkaichi 3", 82).
+puntuacion("Forza Horizon 4", 92).
+puntuacion("God of War", 94).
+puntuacion("The Last of Us Part I", 88).
+puntuacion("Sword Art Online", 70).
+puntuacion("FIFA 24", 80).
+puntuacion("Batman Arkham Trilogy", 87).
+puntuacion("Marvel SpiderMan Remastered", 87).
+puntuacion("Dark Souls 3", 89).
+puntuacion("Elden Ring", 96).
+puntuacion("Left 4 Dead 2", 89).
+puntuacion("Mortal Kombat 11", 82).
+puntuacion("The Legend of Zelda: Ocarina of Time", 99).
+puntuacion("Grand Theft Auto IV", 98).
+puntuacion("Super Mario Galaxy", 97).
+puntuacion("BioShock Saga", 94).
+puntuacion("Half Life Saga", 96).
+puntuacion("Skyrim", 94).
+puntuacion("Red Dead Redemption", 95).
+puntuacion("Portal Saga", 95).
+puntuacion("Doki Doki Literature Club", 87).
+puntuacion("Clair Obscure: Expedition 33", 75).
+
+
 
 /**
  * popularidad(X:string, Y:int)
@@ -156,31 +151,32 @@ rating("Accel World", 4).
 *                si no se pasa, X se unifica con algún animé cuya
 *                popularidad sea Y.
  */
-popularidad("Dragon Ball", 7).
-popularidad("Naruto", 5).
-popularidad("Bleach", 8).
-popularidad("HunterXHunter", 3).
-popularidad("Hamtaro", 10).
-popularidad("Full Metal Alchemist", 1).
-popularidad("Suzumiya Haruhi No Yuutsu", 6).
-popularidad("Sword Art Online", 9).
-popularidad("Another", 5).
-popularidad("Death Note", 10).
-popularidad("Attack On Titan", 10).
-popularidad("Steins;Gate", 4).
-popularidad("Pokémon", 10).
-popularidad("InuYasha", 8).
-popularidad("Kuroshitsuji", 3).
-popularidad("Yu-Gi-Oh!", 7).
-popularidad("Digimon", 8).
-popularidad("Eureka Seven", 2).
-popularidad("School Days", 3).
-popularidad("Free!", 7).
-popularidad("Cowboy Bebop", 10).
-popularidad("Planet Survival", 6).
-popularidad("Noir", 2).
-popularidad("Gundam", 6).
-popularidad("Accel World", 7).
+popularidad("DOOM", 7).
+popularidad("Resident Evil 4 Remake", 9).
+popularidad("Red Dead Redemption 2", 10).
+popularidad("Dragon Ball Budokai Tenkaichi 3", 8).
+popularidad("Forza Horizon 4", 7).
+popularidad("God of War", 10).
+popularidad("The Last of Us Part I", 10).
+popularidad("Sword Art Online", 5).
+popularidad("FIFA 24", 10).
+popularidad("Batman Arkham Trilogy", 8).
+popularidad("Marvel Spiderman Remastered", 9).
+popularidad("Dark Souls 3", 8).
+popularidad("Elden Ring", 10).
+popularidad("Left 4 Dead 2", 9).
+popularidad("Mortal Kombat 11", 8).
+popularidad("The Legend of Zelda: Ocarina of Time", 10).
+popularidad("Grand Theft Auto IV", 8).
+popularidad("Super Mario Galaxy", 10).
+popularidad("BioShock Saga", 7).
+popularidad("Half Life Saga", 9).
+popularidad("Skyrim", 10).
+popularidad("Red Dead Redemption", 8).
+popularidad("Portal Saga", 8).
+popularidad("Doki Doki Literature Club", 6).
+popularidad("Clair Obscure: Expedition 33", 8).
+
 
 /**
  * ratingPopularidad/2
