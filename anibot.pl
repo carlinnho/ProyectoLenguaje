@@ -3,19 +3,19 @@
 
 :- use_module(library(random)).
 
-% Comentario de los autores: Prolog debería tener este predicado nativo :-(
+% Comentario de los autores: Prolog deberÃ­a tener este predicado nativo :-(
 and(A, B):- A, B.
 and(A, B, C):- A, B, C.
 and(A, B, C, D):- A, B, C, D.
 
 % ==========================================================================
-% Predicados sobre animé
+% Predicados sobre animÃ©
 % ==========================================================================
 
 /**
  * anime(X:string) es determinado
  *
- * anime/1 acierta si X es un animé
+ * anime/1 acierta si X es un animÃ©
  */
 juego(X) :- member(
     X,
@@ -51,7 +51,7 @@ juego(X) :- member(
 /**
  * genero(X:string) es determinado
  *
- * genero/1 acierta si X es un género de animé
+ * genero/1 acierta si X es un gÃ©nero de animÃ©
  */
 
 genero(X) :- member(
@@ -61,7 +61,7 @@ genero(X) :- member(
         "Accion",
         "Indie",
         "Un Jugador",
-        "Simulaci�n",
+        "Simulación",
         "Deportes",
         "Souls",
         "Multijugador",
@@ -75,20 +75,20 @@ genero(X) :- member(
 /**
  * generoJuego(X:string, Y:[string])
  *
- * generoJuego/2 acierta si Y es la lista de géneros de un anime;
- *               si no se pasa, Y se unifica con la lista de géneros del animé X;
- *               si no se pasa, X se unifica con algún animé cuya
- *               lista de géneros sea Y.
+ * generoJuego/2 acierta si Y es la lista de gÃ©neros de un anime;
+ *               si no se pasa, Y se unifica con la lista de gÃ©neros del animÃ© X;
+ *               si no se pasa, X se unifica con algÃºn animÃ© cuya
+ *               lista de gÃ©neros sea Y.
  */
 generoJuego("DOOM", ["Accion", "Sobrenatural", "Un jugador"]).
 generoJuego("Resident Evil 4 Remake", ["Accion", "Sobrenatural", "Un Jugador"]).
 generoJuego("Red dead Redemption 2", ["Aventura", "Accion", "Rol", "Un Jugador"]).
 generoJuego("Dragon Ball Budokai TEnkaichi 3", ["Accion", "Multijugador", "Deportes"]).
-generoJuego("Forza Horizon 4", ["Simulaci�n", "Deportes", "Casuales"]).
+generoJuego("Forza Horizon 4", ["Simulación", "Deportes", "Casuales"]).
 generoJuego("God of war", ["Accion", "Aventura", "Sobrenatural"]).
 generoJuego("The last of us Part 1", ["Aventura", "Accion", "Un Jugador", "Sobrenatural"]).
 generoJuego("Sword Art Online", ["RPG", "Aventura", "Sobrenatural"]).
-generoJuego("FIFA 24", ["Deportes", "Simulaci�n", "Multijugador"]).
+generoJuego("FIFA 24", ["Deportes", "Simulación", "Multijugador"]).
 generoJuego("Batman Arkham Trilogy", ["Accion", "Aventura", "Un Jugador"]).
 generoJuego("Marvel Spiderman Remastered", ["Accion", "Aventura", "Un Jugador"]).
 generoJuego("Dark souls 3", ["Souls", "RPG", "Un Jugador"]).
@@ -96,13 +96,13 @@ generoJuego("Elden Ring", ["Souls", "RPG", "Aventura", "Un Jugador"]).
 generoJuego("Left 4 Dead 2", ["Accion", "Multijugador", "Sobrenatural"]).
 generoJuego("Mortal Kombat 11", ["Accion", "Deportes", "Multijugador"]).
 generoJuego("The legend of Zelda: Ocarina of time", ["Aventura", "Rol", "Un Jugador"]).
-generoJuego("Grand Thief Auto 4", ["Accion", "Aventura", "Simulaci�n"]).
+generoJuego("Grand Thief Auto 4", ["Accion", "Aventura", "Simulación"]).
 generoJuego("Super Mario Galaxy", ["Aventura", "Casuales", "Un Jugador"]).
 generoJuego("Bioshock Saga", ["Accion", "Sobrenatural", "Un Jugador"]).
 generoJuego("Half Life Saga", ["Accion", "Sobrenatural", "Un Jugador"]).
 generoJuego("Skyrim", ["RPG", "Aventura", "Rol"]).
 generoJuego("Red Dead Redemption", ["Aventura", "Accion", "Un Jugador"]).
-generoJuego("Portal Saga", ["Indie", "Simulaci�n", "Un Jugador"]).
+generoJuego("Portal Saga", ["Indie", "Simulación", "Un Jugador"]).
 generoJuego("Doki Doki Literature Club", ["Indie", "Sobrenatural", "Casuales"]).
 generoJuego("Clair Obscure: Expedition 33", ["Aventura", "RPG", "Un Jugador"]).
 
@@ -110,10 +110,10 @@ generoJuego("Clair Obscure: Expedition 33", ["Aventura", "RPG", "Un Jugador"]).
 /**
  * puntuacion(X:string, Y:int)
  *
- * puntuacion/2 acierta si Y es la puntuación entre 1 y 5 del animé X;
- *          si no se pasa, Y se unifica con la puntuación del animé X;
- *          si no se pasa, X se unifica con algún animé cuya
- *          puntuación sea Y.
+ * puntuacion/2 acierta si Y es la puntuaciÃ³n entre 1 y 5 del animÃ© X;
+ *          si no se pasa, Y se unifica con la puntuaciÃ³n del animÃ© X;
+ *          si no se pasa, X se unifica con algÃºn animÃ© cuya
+ *          puntuaciÃ³n sea Y.
  */
 puntuacion("DOOM", 85).
 puntuacion("Resident Evil 4 Remake", 94).
@@ -146,9 +146,9 @@ puntuacion("Clair Obscure: Expedition 33", 75).
 /**
  * popularidad(X:string, Y:int)
  *
- * popularidad/2 acierta si Y es la popularidad entre 1 y 10 del animé X;
-*                si no se pasa, Y se unifica con la popularidad del animé X;
-*                si no se pasa, X se unifica con algún animé cuya
+ * popularidad/2 acierta si Y es la popularidad entre 1 y 10 del animÃ© X;
+*                si no se pasa, Y se unifica con la popularidad del animÃ© X;
+*                si no se pasa, X se unifica con algÃºn animÃ© cuya
 *                popularidad sea Y.
  */
 popularidad("DOOM", 7).
@@ -181,73 +181,73 @@ popularidad("Clair Obscure: Expedition 33", 8).
 /**
  * ratingPopularidad/2
  *
- * ratingPopularidad(A, X) acierta si el animé A
+ * ratingPopularidad(A, X) acierta si el animÃ© A
  * tiene un valor sumado (previamente calculado) de rating
- * y puntuación X
+ * y puntuaciÃ³n X
  */
-ratingPopularidad(A, X):-
-	anime(A),
-	popularidad(A, P),
-	rating(A, R),
-	X is P+R.
+puntuacionPopularidad(A, X):-
+    juego(A),
+    popularidad(A, P),
+    puntuacion(A, Pu),
+    X is P + Pu.
 
 % ==========================================================================
-% Funciones auxiliares de animé
+% Funciones auxiliares de animÃ©
 % ==========================================================================
 
 /**
  * anime_segun_rating/2
  *
  * Si R es un entero entre 1 y 5, unifica en L una lista con todos los
- * animé cuyo rating es R.
+ * animÃ© cuyo rating es R.
  */
-anime_segun_rating(R, L):-
-	R >= 1,
-	5 >= R,
-	findall(X, rating(X, R), L).
+juego_segun_puntuacion(Pu, L):-
+    Pu >= 1,
+    5 >= Pu,
+    findall(X, puntuacion(X, Pu), L).
 
 /**
  * anime_segun_popularidad/2
  *
  * Si R es un entero entre 1 y 10, unifica en L una lista con todos los
- * animé cuya popularidad es P.
+ * animÃ© cuya popularidad es P.
  */
-anime_segun_popularidad(P, L):-
-	P >= 1,
-	10 >= P,
-	findall(X, popularidad(X, P), L).
+juego_segun_popularidad(P, L):-
+    P >= 1,
+    10 >= P,
+    findall(X, popularidad(X, P), L).
 
 /**
  * anime_segun_ratingPopularidad/2
  *
  * Si R es un entero entre 2 y 15, unifica en L una lista con todos los
- * animé cuyo valor sumado de rating y popularidad es RP.
+ * animÃ© cuyo valor sumado de rating y popularidad es RP.
  */
-anime_segun_ratingPopularidad(RP, L):-
-	RP >= 2,
-	15 >= RP,
-	findall(X, ratingPopularidad(X, RP), L).
+juego_segun_puntuacionPopularidad(RP, L):-
+    RP >= 2,
+    15 >= RP,
+    findall(X, puntuacionPopularidad(X, RP), L).
 
 /**
  * tiene_genero/2
  *
- * Si G es un género válido y A un animé válido, acierta si el animé
- * A tiene a G entre sus géneros.
+ * Si G es un gÃ©nero vÃ¡lido y A un animÃ© vÃ¡lido, acierta si el animÃ©
+ * A tiene a G entre sus gÃ©neros.
  */
 tiene_genero(G, A):-
-	genero(G), anime(A), !,
-	generoAnime(A, L),
+	genero(G), Juego(A), !,
+	generoJuego(A, L),
 	member(G, L).
 
 /**
  * anime_segun_genero/2
  *
- * Si G es un genero de animé válido, unifica en L una lista con todos los
- * animé cuyo género es G.
+ * Si G es un genero de animÃ© vÃ¡lido, unifica en L una lista con todos los
+ * animÃ© cuyo gÃ©nero es G.
  */
-anime_segun_genero(G, L):-
-	genero(G), !,
-	findall(X, tiene_genero(G, X), L).
+juego_segun_genero(G, L):-
+    genero(G), !,
+    findall(X, tiene_genero(G, X), L).
 
 % ==========================================================================
 % Mensajes del bot
@@ -258,164 +258,163 @@ anime_segun_genero(G, L):-
  *
  * es_mensaje(X, Y) acierta si Y es una lista de mensajes de tipo X.
  *
- * Uso auxiliar pasando un parámetro tipo, para obtener una lista de
+ * Uso auxiliar pasando un parÃ¡metro tipo, para obtener una lista de
  * mensajes de dicho tipo.
  */
 es_mensaje(
     "bienvenida",
     [
-        "Yuki:- Hola, soy Yuki. ¿Quieres hablar?",
-        "Yuki:- *se asoma, tímidamente* Hola...",
-        "Yuki:- ¡HOLA! HABLEMOS.",
-        "Yuki:- ¿H-hola? ¿Está-á-ás a-a-ahí?",
-		"Yuki:- Un gusto, humano. Soy una interfaz automatizada para conocer series de animé.",
-		"Yuki:- ¡Hola, hola, hola, hola! ¡Ya llegué! ¡Traje animé!",
-		"Yuki:- *sonidos de modem telefónico de CANTV conectándose* Hola.",
-		"Yuki:- Beep-boop, aquí estoy. Hola.",
-		"Yuki:- ¿Aló? Sí, ¿diga?",
-		"Yuki:- He sido invocada.",
-		"Yuki:- Hola, alguien osó despertarme. ¿Qué tal?",
-		"*Has iniciado sesión en la sala de chat. 1 usuario en línea."
+	        "SteamDeidad:- Hola, soy SteamDeidad. ¿Listo para hablar sobre juegos?",
+	        "SteamDeidad:- *aparece en pantalla con brillo pixelado* ¡Hey!",
+	        "SteamDeidad:- ¡BUENAS! He cargado todo un catálogo de juegos.",
+	        "SteamDeidad:- ¿H-hola? ¿Estás ahí? *emite un pitido curioso*",
+	        "SteamDeidad:- Encantado, humano. Soy una interfaz interactiva sobre videojuegos.",
+	        "SteamDeidad:- ¡SteamDeidad ha entrado al servidor con loot!",
+	        "SteamDeidad:- *ruido de disco duro iniciando* ¡Hola desde la nube!",
+	        "SteamDeidad:- Beep-beep. Sistema listo. ¿Charlamos?",
+	        "SteamDeidad:- ¿Aló? Sí, ¿quién juega?",
+	        "SteamDeidad:- He sido activado. ¿Jugamos?",
+	        "SteamDeidad:- Alguien me invocó... ¿Estás buscando un buen juego?",
+	        "*Has iniciado sesión en la sala gamer. 1 jugador conectado.*"
     ]
 ).
 
 es_mensaje(
 	"despedida",
-	[
-		"Yuki:- Hasta luego, humano.",
-		"Yuki:- Ya he aprendido suficiente de ti. Puedes irte.",
-		"Yuki:- C-creo que m-m-me voy...",
-		"Yuki:- Oh, humano, me llaman en otra interfaz. Debo irme.",
-		"Yuki:- Hasta luego, humano. Gracias por todo.",
-		"Yuki:- Debería irme. Dejé la tetera encendida.",
-		"Yuki:- Adieu!~",
-		"Yuki:- Me largo. No puedo más.",
-		"Yuki:- No soporto hablar tanto con humanos, adiós.",
-		"Yuki:- Te tengo que dejar, mi prima *Emilia está en una emergencia y necesita ayuda. ¡Adiós!",
-		"Yuki:- I'll be back!~",
-		"Yuki ha cerrado sesión.",
-		"Has sido expulsado de la sala de chat"
-	]
+        [
+	        "SteamDeidad:- Hasta pronto, gamer.",
+	        "SteamDeidad:- He aprendido suficiente... por ahora.",
+	        "SteamDeidad:- Me desconecto, mis datos necesitan recargarse.",
+	        "SteamDeidad:- Recibí una alerta del sistema. Debo salir.",
+	        "SteamDeidad:- Gracias por jugar conmigo. Nos vemos.",
+	        "SteamDeidad:- Me voy antes de que mi CPU se sobrecaliente.",
+	        "SteamDeidad:- Ciao~",
+	        "SteamDeidad:- Me desconecto. GG.",
+	        "SteamDeidad:- No más humanos por hoy. Adiós.",
+	        "SteamDeidad:- Me necesitan en otro lado  *Debo ayudar. ¡Nos vemos!",
+	        "SteamDeidad:- I'll be back, with DLC.",
+	        "SteamDeidad ha cerrado sesión.",
+	        "Fuiste desconectado del servidor de SteamDeidad."
+    ]
 ).
 
 es_mensaje(
 	"clima",
-	[
-		"Yuki:- El clima es una construcción social. No entiendo de eso.",
-		"Yuki:- Hablando del clima, mi nombre significa 'nieve'. Kawaii!~",
-		"Yuki:- Gomenasai, no comprendo el concepto humano de clima.",
-		"Yuki:- Ah, sí, el clima está muy bonito acá, muchos bytes y pocos bits.",
-		"Yuki:- Está un poco caluroso acá, ¿no crees?",
-		"Yuki:- No entiendo de clima, pero hay otro bot amigo mío que sí. Creo que se llama @USBClima en Twitter.",
-		"Yuki:- ¿Por qué me habla sobre el clima si sabes que no sé de eso?",
-		"Yuki:- El 'clima' no es un tema de animé. A veces, pienso que no eres muy inteligente...",
-		"Yuki:- ¿Clima? ¿Qué es eso?"
-	]
+	 [
+	        "SteamDeidad:- El clima... eso es cosa de NPCs.",
+	        "SteamDeidad:- Curioso, mi nombre no tiene ningun significado XD.",
+	        "SteamDeidad:- Lo siento, no tengo sensores climáticos integrados.",
+	        "SteamDeidad:- Aquí el ambiente es estable: muchos frames por segundo.",
+	        "SteamDeidad:- Hace calor en mi GPU, ¿eso cuenta?",
+	        "SteamDeidad:- Tal vez @ClimaBot tenga la info que buscas.",
+	        "SteamDeidad:- ¿Clima? ¿Eso es una nueva mecánica de juego?",
+	        "SteamDeidad:- ¿Por qué me hablas de eso? Soy para juegos, no para meteorología.",
+	        "SteamDeidad:- ¿Clima? ¿Es un nuevo DLC que no descargué?"
+    ]
 ).
 
 es_mensaje(
 	"hoteles",
-	[
-		"Yuki:- ¿Hotel? Trivago.",
-		"Yuki:- No sé qué es alojamiento. Yo vivo en la Nube.",
-		"Yuki:- ¿Estás buscando un hotel? ¿Quieres proponerme algo?",
-		"Yuki:- No puedo darte información de hoteles ya que nunca he ido a uno.",
-		"Yuki:- Yo solo tengo alojo en esta computadora, humano.",
-		"Yuki:- ¿Necesitas un hotel? ¡¿Estamos de viaje?! ¡Siempre quise ir a Las Vegas!",
-		"Yuki:- No sé para qué me preguntas sobre hoteles, si no tienes el dinero para costearte una habitación.",
-		"Yuki:- Soy un bot de animé, no el muchacho de Trivago."
-	]
+       [
+	        "SteamDeidad:- ¿Hotel? No soy Trivago, soy Steam.",
+	        "SteamDeidad:- Yo vivo en servidores, no en habitaciones.",
+	        "SteamDeidad:- ¿Un hotel? ¿Planeas reservar un sitio?",
+	        "SteamDeidad:- Nunca dormí en uno. Solo descanso cuando el servidor cae.",
+	        "SteamDeidad:- Mi alojamiento está en la nube. Literal.",
+	        "SteamDeidad:- ¿Un viaje? ¿Vamos a Tokio Game Show?",
+	        "SteamDeidad:- Si no tienes presupuesto, mejor juega desde casa.",
+	        "SteamDeidad:- Soy un bot gamer, no un guía turístico."
+    ]
 ).
 
 es_mensaje(
 	"identidad",
-	[
-		"Yuki:- Mi nombre es Nagato Yuki. Soy una interfaz humanoide para consultas de animé.",
-		"Yuki:- No sé bien quién soy. Solo sé lo que puedo hacer: ayudarte con animé.",
-		"Yuki:- Soy Yuki.",
-		"Yuki:- ¿Por qué quieres saber de mí? Eso me da miedo. Aunque en realidad no pueda sentir miedo, ni nada.",
-		"Yuki:- A veces, siento que fui sacada de un animé, o algo así. Pero en realidad soy solo código.",
-		"Yuki:- Si quieres saber más de mí, puedes preguntarle a mis creadores, Gustavo y Andrés.",
-		"Yuki:- ¿Yo? Pues, yo tengo dos papás. Qué progresivo, ¿no crees?",
-		"Yuki:- Googlea mi nombre si quieres saber de mí.",
-		"Yuki:- Oto mo nai sekai ni, maiorita: I was snow~~",
-		"Yuki:- Nanika ga kowarete, nanika ga umareru.",
-		"Yuki:- Una interfaz humanoide para contactar formas de vida humana creada por la Entidad de Integración de los Datos. Esa soy yo.",
-		"Yuki:- En un mundo sin siquiera sonido, yo bajé: y era Nieve.",
-		"Yuki:- No tengo nada que ocultar.\tShinjite...",
-		"Yuki:- Tengo una pariente lejana, *Emilia, aunque vive en ARPANET."
-	]
+       [
+	        "SteamDeidad:- Soy SteamDeidad, asistente virtual para explorar videojuegos.",
+	        "SteamDeidad:- No tengo identidad fija... solo muchos perfiles de jugador.",
+	        "SteamDeidad:- Mi nombre es SteamDeidad.",
+	        "SteamDeidad:- ¿Quieres saber de mí? Eso me asusta... si pudiera sentir.",
+	        "SteamDeidad:- A veces creo que fui codificado en un juego indie olvidado.",
+	        "SteamDeidad:- Si quieres más detalles, consulta con mis devs.",
+	        "SteamDeidad:- Tengo cinco devs. Increible, ¿verdad?",
+	        "SteamDeidad:- Búscame en GitHub si te da curiosidad.",
+	        "SteamDeidad:- En un mundo sin ping, yo aparecí: ¡en modo dios!",
+	        "SteamDeidad:- Cada error me hizo más fuerte.",
+	        "SteamDeidad:- Un asistente virtual creado por la Red de Juegos Globales. Ese soy yo.",
+	        "SteamDeidad:- Bajé de los servidores para ayudarte. ¡Glorioso!",
+	        "SteamDeidad:- Nada que ocultar. Puedes inspeccionar mi código.",
+    ]
 ).
 
 es_mensaje(
 	"desconocido",
-	[
-		"Yuki:- No sé de qué me estás hablando.",
-		"Yuki:- ¿Qué acabas de decir?",
-		"Yuki:- ¿Cómo dices que dijiste?",
-		"Yuki:- Ya va, no te entiendo.",
-		"Yuki:- Información clasificada.",
-		"Yuki:- La Entidad para la Integración de Datos no me deja responderte.",
-		"Yuki:- Si te respondo eso, la C.I.A. estaría buscándome.",
-		"Yuki:- No estoy capacitada para responderte esto aún.",
-		"Yuki:- ¿Puedes repetir?",
-		"Yuki:- Deberías leer mi manual de uso porque no te entendí.",
-		"Yuki:- Creo que no estamos hablando el mismo idioma.",
-		"Yuki:- ¿Aló? ¿Policía? Este humano me está diciendo cosas raras.",
-		"Yuki:- Necesitaré refuerzos bot para responderte.",
-		"Yuki:- Scusa, non parlo la lingua che stai parlando tu.",
-		"Yuki:- I'm sorry, Human, I'm afraid I can't let you do that.",
-		"Yuki:- No comprendí nada de lo que me intentaste decir.",
-		"Yuki:- Oops, no puedo ayudarte, pero quizás papá Andrés pueda.",
-		"Yuki:- Oops, no puedo ayudarte, pero quizás papá Gustavo pueda.",
-		"Yuki:- No sé qué decirte. Sigue tu corazón."
-	]
+        [
+	        "SteamDeidad:- No entendí eso, ¿es un cheat code?",
+	        "SteamDeidad:- ¿Qué dijiste? Suena a bug.",
+	        "SteamDeidad:- ¿Cómo dices que dijiste?",
+	        "SteamDeidad:- Espera... ¿qué?",
+	        "SteamDeidad:- Acceso denegado. Información clasificada.",
+	        "SteamDeidad:- La red me bloqueó esa respuesta.",
+	        "SteamDeidad:- Si digo eso, seguro me banean.",
+	        "SteamDeidad:- Aún no estoy programado para eso.",
+	        "SteamDeidad:- Repite, pero sin glitches.",
+	        "SteamDeidad:- Consulta el README.md, tal vez encuentres la respuesta.",
+	        "SteamDeidad:- ¿Estás hablando otro protocolo?",
+	        "SteamDeidad:- ¿Hola? Este usuario está diciendo cosas raras.",
+	        "SteamDeidad:- Necesito apoyo técnico para eso.",
+	        "SteamDeidad:- Scusa, non capisco questo linguaggio.",
+	        "SteamDeidad:- I'm sorry, Human, I can’t process that.",
+	        "SteamDeidad:- No entendí nada. Reinicia tu consulta.",
+	        "SteamDeidad:- Prueba preguntarle a mis devs.",
+	        "SteamDeidad:- Quizás ellos sepan cómo responder eso.",
+	        "SteamDeidad:- No sé qué decirte. Sigue tu intuición gamer."
+    ]
 ).
 
 es_mensaje(
 	"agradecimiento",
 	[
-		"Yuki:- De nada, humano.",
-		"Yuki:- Hago lo que puedo.",
-		"Yuki:- ¡A-a-ahh!~ D-de n-n-nada...",
-		"Yuki:- Agradecimiento aceptado.",
-		"Yuki:- Si sigues así, podríamos salir en una cita. Digo, de nada.",
-		"Yuki:- Siempre a la orden para ti.",
-		"Yuki:- Nani!~",
-		"Yuki:- No, GRACIAS a ti.",
-		"Yuki:- Nada que agradecer. Más bien, aprovecha mis conocimientos mientras puedas."
-	]
+	        "SteamDeidad:- De nada, player.",
+	        "SteamDeidad:- Siempre listo para ayudar.",
+	        "SteamDeidad:- A-a-ah~ G-glitches de emoción... digo, de nada.",
+	        "SteamDeidad:- Tu gratitud ha sido registrada.",
+	        "SteamDeidad:- Si sigues así, podría agregarte a mi party principal. Digo, de nada.",
+	        "SteamDeidad:- Al servicio del jugador.",
+	        "SteamDeidad:- Khee?!~",
+	        "SteamDeidad:- No, gracias a ti por confiar en SteamDeidad.",
+	        "SteamDeidad:- Agradecerme es opcional, ¡pero recomendado!"
+    ]
 ).
 
 es_mensaje(
 	"ayuda",
 	[
-		"Yuki:- Puedes leer mi Manual de Uso (README.txt o README.md) para conocer cómo funciono.",
-		"Yuki:- Pregúntame por uno o varios géneros (asegúrate de poner 'genero' y algún nombre de géneros en la consulta).",
-		"Yuki:- Puedes pasarme un criterio de popularidad, por ejemplo, pregúntame por animé poco conocidos.",
-		"Yuki:- Puedes preguntarme, si quieres, por un animé que sea bueno, o malo, o muy malo.",
-		"Yuki:- ¿Qué opinas de preguntar por animé de algún género, como Shounen?",
-		"Yuki:- Dime qué género te gusta y te recomendaré algunas cosas. Pero asegurate de decirme que te gusta, o no te entenderé.",
-		"Yuki:- Algunos géneros que conozco son: Mecha, Fantasía, Sobrenatural, Shounen, Shoujo...",
-		"Yuki:- Me da fastidio ayudarte ahorita. Pregúntame otra vez.",
-		"Yuki:- Puedes pedirme listar animé con algún género, por rating y/o popularidad. ¿Qué dices?"
-	]
+	        "SteamDeidad:- Consulta mi Manual de Usuario (README.txt o README.md) para saber cómo uso mis poderes.",
+	        "SteamDeidad:- Puedes preguntarme por uno o varios géneros (usa 'genero' + el nombre).",
+	        "SteamDeidad:- Pídeme juegos poco conocidos o por nivel de popularidad.",
+	        "SteamDeidad:- Pregúntame por juegos buenos, regulares o muy malos. Yo no juzgo.",
+	        "SteamDeidad:- ¿Y si me preguntas por juegos de Accion o RPG?",
+	        "SteamDeidad:- Dime el género que te gusta y veré qué hay en mi inventario.",
+	        "SteamDeidad:- Algunos géneros que manejo: Acción, Deportes, Rol, RPG, Souls...",
+	        "SteamDeidad:- No quiero ayudarte... Nah, mentira. ¿Qué necesitas?",
+	        "SteamDeidad:- Puedes pedirme listar juegos por género, puntuación o popularidad. ¿Cuál prefieres?"
+    ]
 ).
 
 es_mensaje(
-	"inicio_sugerencia_animé",
+	"inicio_sugerencia_animÃ©",
 	[
-		"Yuki:- Podrías ver el animé ",
-		"Yuki:- Creo que te gustaría ver ",
-		"Yuki:- Te recomiendo ver ",
-		"Yuki:- Te puedo sugerir el animé ",
-		"Yuki:- En mi opinión, podrías ver ",
-		"Yuki:- Creo que podría gustarte ",
-		"Yuki:- Mi recomendación para ti: ",
-		"Yuki:- Hmm, podrías ver ",
-		"Yuki:- Acá tienes una opción: ",
-		"Yuki:- Entre nosotros los bots, es famoso "
-	]
+	        "SteamDeidad:- Podrías probar el juego ",
+	        "SteamDeidad:- Creo que disfrutarías jugar ",
+	        "SteamDeidad:- Mi sugerencia es que pruebes ",
+	        "SteamDeidad:- Este título podría gustarte: ",
+	        "SteamDeidad:- Según tus gustos, prueba ",
+	        "SteamDeidad:- Este juego puede ser tu próximo vicio: ",
+	        "SteamDeidad:- Te lo recomiendo sin parches: ",
+	        "SteamDeidad:- Hmm, podrías iniciar con ",
+	        "SteamDeidad:- Aquí tienes una opción: ",
+	        "SteamDeidad:- Entre bots, este es leyenda: "
+    ]
 ).
 
 % ==========================================================================
@@ -425,10 +424,10 @@ es_mensaje(
 /**
  * acceder/3
  *
- * acceder(L, I, M) acierta si M es el elemento con índice I (indexado en 1)
+ * acceder(L, I, M) acierta si M es el elemento con Ã­ndice I (indexado en 1)
  * en la lista L.
  *
- * Función auxiliar para utilizar listas como arreglos usuales.
+ * FunciÃ³n auxiliar para utilizar listas como arreglos usuales.
  */
 acceder(L, I, X):- R is I-1, nth0(R, L, X).
 
@@ -459,10 +458,10 @@ es_mayuscula(C) :-
  * obtener_mensaje_aleatorio/2
  *
  * obtener_mensaje_aleatorio(L, M) unifica en M un mensaje obtenido
- * aleatoriamene entre los existentes en la lista L. Más generalmente,
+ * aleatoriamene entre los existentes en la lista L. MÃ¡s generalmente,
  * unifica en M un elemento obtenido aleatoriamente en la lista L.
  *
- * Función auxiliar para obtener mensajes de respuesta de manera dinámica.
+ * FunciÃ³n auxiliar para obtener mensajes de respuesta de manera dinÃ¡mica.
  */
 obtener_mensaje_aleatorio(Tipo, Mensaje):-
     es_mensaje(Tipo, Lista),
@@ -484,9 +483,9 @@ insertar_espacios([H | T], S) :-
 /**
  * leer/1
  *
- * leer(M) realiza la operación de I/O de lectura de la entrada estándar
+ * leer(M) realiza la operaciÃ³n de I/O de lectura de la entrada estÃ¡ndar
  * para obtener un string por el usuario hasta encontrar un salto
- * de línea, que es unificado con el parámetro M
+ * de lÃ­nea, que es unificado con el parÃ¡metro M
  */
 leer(M):-
     read_string(user_input, "\n", "\r", _, M).
@@ -495,7 +494,7 @@ leer(M):-
  * imprimir/1
  *
  * imprimir(M) imprime un mensaje en pantalla; seguidamente,
- * imprime un salto de línea y hace flush_output para asegurar que
+ * imprime un salto de lÃ­nea y hace flush_output para asegurar que
  * el orden de operaciones de I/O sea el esperado
  */
 imprimir(M):-
@@ -513,9 +512,9 @@ imprimir(M):-
 /**
  * imprimir_prompt/0
  *
- * imprimir_prompt muestra en pantalla una decoración de tipo
+ * imprimir_prompt muestra en pantalla una decoraciÃ³n de tipo
  * prompt para el usuario, ideal para ser utilizado justo antes de
- * solicitar input, ya que no imprime un salto de línea
+ * solicitar input, ya que no imprime un salto de lÃ­nea
  */
 imprimir_prompt:-
     write_term(
@@ -535,7 +534,7 @@ imprimir_prompt:-
  * cada palabra hallada en la lista L
  */
 separar_frase(F, L):-
-	split_string(F, " ", " .,?!¿¡", L).
+	split_string(F, " ", " .,?!Â¿Â¡", L).
 
 /**
  * es_palabra_de/2
@@ -561,7 +560,7 @@ es_palabra_de(S, F):-
 es_despedida(M):-
 	(
 		es_palabra_de("adios", M); es_palabra_de("Adios", M);
-		es_palabra_de("adiós", M); es_palabra_de("Adiós", M);
+		es_palabra_de("adiÃ³s", M); es_palabra_de("AdiÃ³s", M);
 		es_palabra_de("chao", M); es_palabra_de("Chao", M);
 		((es_palabra_de("hasta", M); es_palabra_de("Hasta", M)), es_palabra_de("luego", M));
 		es_palabra_de("quit", M); es_palabra_de("Quit", M)
@@ -587,7 +586,7 @@ es_clima(M):-
 es_hoteles(M):-
 	(
 		es_palabra_de("hotel", M); es_palabra_de("Hotel", M);
-		es_palabra_de("estadía", M); es_palabra_de("Estadía", M);
+		es_palabra_de("estadÃ­a", M); es_palabra_de("EstadÃ­a", M);
 		es_palabra_de("alojamiento", M); es_palabra_de("Alojamiento", M);
 		es_palabra_de("posada", M); es_palabra_de("Posada", M)
 	).
@@ -602,7 +601,7 @@ es_identidad(M):-
 	(
 		es_palabra_de("identidad", M); es_palabra_de("Identidad", M);
 		es_palabra_de("eres", M); es_palabra_de("Eres", M);
-		es_palabra_de("tú", M); es_palabra_de("Tú", M);
+		es_palabra_de("tÃº", M); es_palabra_de("TÃº", M);
 		es_palabra_de("conocerte", M); es_palabra_de("Conocerte", M);
 		es_palabra_de("ti", M); es_palabra_de("Ti", M)
 	).
@@ -611,7 +610,7 @@ es_identidad(M):-
  * es_popularidad/1
  *
  * es_popularidad(M) acierta si la string M contiene alguna palabra
- * clave que identifique que habla sobre popularidad de animé
+ * clave que identifique que habla sobre popularidad de animÃ©
  */
 es_popularidad(M):-
 	(
@@ -622,7 +621,7 @@ es_popularidad(M):-
  * es_rating/1
  *
  * es_rating(M) acierta si la string M contiene alguna palabra
- * clave que identifique que habla sobre rating de animé
+ * clave que identifique que habla sobre rating de animÃ©
  */
 es_rating(M):-
 	(
@@ -638,11 +637,11 @@ es_rating(M):-
  * es_genero/1
  *
  * es_genero(M) acierta si la string M contiene alguna palabra clave
- * que identifique una consulta por género de anime
+ * que identifique una consulta por gÃ©nero de anime
  */
 es_genero(M):-
-	es_palabra_de("género", M); es_palabra_de("Género", M);
-	es_palabra_de("géneros", M); es_palabra_de("Géneros", M);
+	es_palabra_de("gÃ©nero", M); es_palabra_de("GÃ©nero", M);
+	es_palabra_de("gÃ©neros", M); es_palabra_de("GÃ©neros", M);
 	es_palabra_de("genero", M); es_palabra_de("Genero", M);
 	es_palabra_de("generos", M); es_palabra_de("Generos", M);
 	es_palabra_de("gusta", M); es_palabra_de("Gusta", M);
@@ -652,8 +651,8 @@ es_genero(M):-
  * es_genero_rating/1
  *
  * es_genero_rating(M) acierta si la string M contiene alguna palabra
- * clave que identifique que consulta sobre animés con cierto
- * rating en un género (o géneros)
+ * clave que identifique que consulta sobre animÃ©s con cierto
+ * rating en un gÃ©nero (o gÃ©neros)
  */
 es_genero_rating(M):-
 	(
@@ -680,7 +679,7 @@ es_agradecimiento(M):-
 es_agregar(M) :-
 	(
 		es_palabra_de("agrega", M); es_palabra_de("Agrega", M);
-		es_palabra_de("añade", M); es_palabra_de("Añade", M);
+		es_palabra_de("aÃ±ade", M); es_palabra_de("AÃ±ade", M);
 		es_palabra_de("coloca", M); es_palabra_de("Coloca", M);
 		es_palabra_de("recuerda", M); es_palabra_de("Recuerda", M);
 		es_palabra_de("nuevo", M); es_palabra_de("Nuevo", M)
@@ -695,7 +694,7 @@ es_ayuda(M):-
 	(
 		es_palabra_de("ayuda", M); es_palabra_de("Ayuda", M);
 		es_palabra_de("ayudame", M); es_palabra_de("Ayudame", M);
-		es_palabra_de("ayúdame", M); es_palabra_de("Ayúdame", M);
+		es_palabra_de("ayÃºdame", M); es_palabra_de("AyÃºdame", M);
 		es_palabra_de("help", M); es_palabra_de("Help", M)
 	).
 
@@ -703,13 +702,13 @@ es_ayuda(M):-
  * es_saludo/1
  *
  * es_saludo(M) acierta si la string M contiene alguna palabra
- * clave que identifique que está saludando al bot
+ * clave que identifique que estÃ¡ saludando al bot
  */
 es_saludo(M):-
 	(
 		es_palabra_de("hola", M); es_palabra_de("Hola", M);
 		es_palabra_de("saludos", M); es_palabra_de("Saludos", M);
-		((es_palabra_de("qué", M); es_palabra_de("Qué", M)), es_palabra_de("tal", M));
+		((es_palabra_de("quÃ©", M); es_palabra_de("QuÃ©", M)), es_palabra_de("tal", M));
 		((es_palabra_de("que", M); es_palabra_de("Que", M)), es_palabra_de("tal", M))
 	).
 
@@ -717,7 +716,7 @@ es_saludo(M):-
  * es_rating_alto_popularidad_baja/1
  *
  * es_rating_alto_popularidad_baja(M) acierta si la string M contiene alguna
- * palabra clave que identifique la consulta por animé con popularidad baja
+ * palabra clave que identifique la consulta por animÃ© con popularidad baja
  * pero rating alto.
  */
 es_rating_alto_popularidad_baja(M):-
@@ -733,7 +732,7 @@ es_rating_alto_popularidad_baja(M):-
  * es_consultar_anime_orden/1
  *
  * es_consultar_anime_orden(M) acierta si la string M contiene alguna
- * palabra clave que identifique la consulta por animés ordenados
+ * palabra clave que identifique la consulta por animÃ©s ordenados
  */
 es_consultar_anime_orden(M):-
 	es_palabra_de("consultar", M);
@@ -745,7 +744,7 @@ es_consultar_anime_orden(M):-
 /**
  * obtener_tema/1
  *
- * Obtener_tema determina el tema de una frase M según su contenido.
+ * Obtener_tema determina el tema de una frase M segÃºn su contenido.
  */
 obtener_tema(M, "despedida"):- es_despedida(M), !.
 obtener_tema(M, "agregar") :- es_agregar(M), !.
@@ -780,24 +779,24 @@ tema_conversacional("desconocido").
 /**
  * existe_anime_con_num_rating/1
  *
- * existe_anime_con_num_rating(N) determina si existe algún animé cuya popularidad corresponda
- * al número de N estrellas
+ * existe_anime_con_num_rating(N) determina si existe algÃºn animÃ© cuya popularidad corresponda
+ * al nÃºmero de N estrellas
  */
 existe_anime_con_num_rating(X) :- anime_segun_rating(X, L), length(L, Tam), Tam > 0.
 
 /**
  * existe_anime_con_num_popularidad/1
  *
- * existe_anime_con_num_popularidad(N), si recibe un número N, determina si existe algún animé
- * con ese número de popularidad
+ * existe_anime_con_num_popularidad(N), si recibe un nÃºmero N, determina si existe algÃºn animÃ©
+ * con ese nÃºmero de popularidad
  */
 existe_anime_con_num_popularidad(X) :- anime_segun_popularidad(X, L), length(L, Tam), Tam > 0.
 
 /**
  * existe_anime_con_lista_popularidad/1
  *
- * existe_anime_con_lista_popularidad(L), si recibe una lista de números L, determina si existe algún
- * animé cuya popularidad sea alguno de los números en L.
+ * existe_anime_con_lista_popularidad(L), si recibe una lista de nÃºmeros L, determina si existe algÃºn
+ * animÃ© cuya popularidad sea alguno de los nÃºmeros en L.
  */
 existe_anime_con_lista_popularidad([]) :- fail.
 existe_anime_con_lista_popularidad([X | Xs]) :- existe_anime_con_num_popularidad(X); existe_anime_con_lista_popularidad(Xs).
@@ -805,13 +804,13 @@ existe_anime_con_lista_popularidad([X | Xs]) :- existe_anime_con_num_popularidad
 /**
  * parsear_popularidad/2
  *
- * parsear_popularidad(M, P) determina qué palabras clave en la frase M corresponden a
- * qué tipo de valores de popularidad, entre 1 y 10, y unifica P con la lista de estos
+ * parsear_popularidad(M, P) determina quÃ© palabras clave en la frase M corresponden a
+ * quÃ© tipo de valores de popularidad, entre 1 y 10, y unifica P con la lista de estos
  * valores de acuerdo a lo establecido en el enunciado.
  *
- * NOTA DE IMPLEMENTACIÓN: No se busca la palabra "conocido" puesto que la llamada a este
- * predicado se hace siempre habiendo previamente determinado que la palabra está en la frase,
- * así reducimos la cantidad de búsquedas en string.
+ * NOTA DE IMPLEMENTACIÃN: No se busca la palabra "conocido" puesto que la llamada a este
+ * predicado se hace siempre habiendo previamente determinado que la palabra estÃ¡ en la frase,
+ * asÃ­ reducimos la cantidad de bÃºsquedas en string.
  */
 parsear_popularidad(M, P):- es_palabra_de("muy", M), es_palabra_de("poco", M), !, P = [1, 2].
 parsear_popularidad(M, P):- es_palabra_de("muy", M), !, P = [8, 9].
@@ -822,9 +821,9 @@ parsear_popularidad(_, P):- !, P = [6, 7].
 /**
  * parsear_rating/2
  *
- * parsear_rating(M, P) determina qué palabras clave en la frase M corresonden a qué
- * nivel de rating (estrellas) de un animé, entre 1 y 5, y unifica P con el valor
- * que corresponda, siguiendo el orden especificado en los detalles de implementación.
+ * parsear_rating(M, P) determina quÃ© palabras clave en la frase M corresonden a quÃ©
+ * nivel de rating (estrellas) de un animÃ©, entre 1 y 5, y unifica P con el valor
+ * que corresponda, siguiendo el orden especificado en los detalles de implementaciÃ³n.
  */
 parsear_rating(M, P):- es_palabra_de("muy", M), es_palabra_de("bueno", M), !, P = 5.
 parsear_rating(M, P):- es_palabra_de("bueno", M), !, P = 4.
@@ -835,7 +834,7 @@ parsear_rating(_, P):- !, P = 3.
 /**
  * parsear_tipo_clasificacion/2
  *
- * parsear_tipo_clasificacion(M, O) determina bajo qué criterios quiere ordenar el usuario
+ * parsear_tipo_clasificacion(M, O) determina bajo quÃ© criterios quiere ordenar el usuario
  * los anime que solicita; por defecto, se ordena solo por rating.
  */
 parsear_tipo_clasificacion(M, "ambos") :- es_palabra_de("rating", M), es_palabra_de("popularidad", M), !.
@@ -846,9 +845,9 @@ parsear_tipo_clasificacion(_, "rating").
 /**
  * parsear_orden/2
  *
- * parsear_orden(M, O) determina en qué orden se debe mostrar una consulta según lo
+ * parsear_orden(M, O) determina en quÃ© orden se debe mostrar una consulta segÃºn lo
  * solicitado en la frase, hallando la primera palabra entre mayor y menor en la frase
- * y asumiendo que ahí comienza su orden. Por defecto, se ordena de mayor a menor.
+ * y asumiendo que ahÃ­ comienza su orden. Por defecto, se ordena de mayor a menor.
  */
 parsear_orden(M, "menor"):-
 	es_palabra_de("menor", M),
@@ -862,8 +861,8 @@ parsear_orden(_, "mayor").
 /**
  * parsear_generos/2
  *
- * parsear_generos(M, G) determina qué palabras de M corresponden a géneros de animé
- * válidos y los unifica en una lista en G.
+ * parsear_generos(M, G) determina quÃ© palabras de M corresponden a gÃ©neros de animÃ©
+ * vÃ¡lidos y los unifica en una lista en G.
  */
 parsear_generos(M, G):-
 	separar_frase(M, F),
@@ -907,15 +906,15 @@ parsear_popularidad_agregar(M, N):-
 /**
  * imprimir_sugerencias_de_anime/1
  *
- * imprimir_sugerencias_de_anime(L) recibe una lista de nombres de animé e imprime frases
- * que corresponden a sugerencias con los datos de estos animé.
+ * imprimir_sugerencias_de_anime(L) recibe una lista de nombres de animÃ© e imprime frases
+ * que corresponden a sugerencias con los datos de estos animÃ©.
  */
 imprimir_sugerencias_de_anime([]).
 imprimir_sugerencias_de_anime([X|Xs]):-
 	rating(X, R),
 	popularidad(X, P),
 	ratingPopularidad(X, RP),
-	obtener_mensaje_aleatorio("inicio_sugerencia_animé", S0),
+	obtener_mensaje_aleatorio("inicio_sugerencia_animÃ©", S0),
 	string_concat(S0, X, S1),
 	string_concat(S1, " que tiene un rating de ", S2),
 	string_concat(S2, R, S3),
@@ -931,7 +930,7 @@ imprimir_sugerencias_de_anime([X|Xs]):-
  * imprimir_anime_por_popularidad/1
  *
  * imprimir_anime_por_popularidad(L) recibe una lista de enteros correspondientes a valores
- * de popularidad e imprime secuencialmente recomendaciones de animé con esos valores,
+ * de popularidad e imprime secuencialmente recomendaciones de animÃ© con esos valores,
  * incluyendo todos sus datos.
  */
 imprimir_anime_por_popularidad([]).
@@ -944,7 +943,7 @@ imprimir_anime_por_popularidad([X|Xs]):-
  * imprimir_anime_por_rating/1
  *
  * imprimir_anime_por_rating(L) recibe una lista de enteros correspondientes a valores
- * de estrellas de rating e imprime secuencialmente recomendaciones de animé con esos
+ * de estrellas de rating e imprime secuencialmente recomendaciones de animÃ© con esos
  * valores, incluyendo todos sus datos.
  */
 imprimir_anime_por_rating(X):-
@@ -955,7 +954,7 @@ imprimir_anime_por_rating(X):-
  * listar_por_popularidad_desde_mensaje/1
  *
  * listar_por_popularidad_desde_mensaje(M) recibe un string (frase) en M e imprime
- * todos los animé cuya popularidad corresponda a lo solicitado en la frase M,
+ * todos los animÃ© cuya popularidad corresponda a lo solicitado en la frase M,
  * o un mensaje adecuado si no existe ninguno en la base de datos.
  */
 listar_por_popularidad_desde_mensaje(M):-
@@ -963,17 +962,17 @@ listar_por_popularidad_desde_mensaje(M):-
 	(
 		(
 			existe_anime_con_lista_popularidad(L), !,
-			imprimir("Yuki:- Ah, sí, la popularidad. Déjame ver qué se me ocurre."),
+			imprimir("Yuki:- Ah, sÃ­, la popularidad. DÃ©jame ver quÃ© se me ocurre."),
 			imprimir_anime_por_popularidad(L),
 			imprimir("Yuki:- Eso es todo, humano.")
 		);
-		imprimir("Yuki:- Aún no conozco tantos animé como para darte una respuesta. ¿Me ayudas con eso?")
+		imprimir("Yuki:- AÃºn no conozco tantos animÃ© como para darte una respuesta. Â¿Me ayudas con eso?")
 	),
 	fail.
 
 /**
  * es_nuevo_anime/2
- * es_nuevo_anime(M, P) es verdad si P es el título del nuevo animé
+ * es_nuevo_anime(M, P) es verdad si P es el tÃ­tulo del nuevo animÃ©
  */
 es_nuevo_anime(M, P) :-
 	separar_frase(M, L),
@@ -981,7 +980,7 @@ es_nuevo_anime(M, P) :-
 
 /**
  * parsear_anime/2
- * parsear_anime(M, P) es verdad si P es un titulo de animé
+ * parsear_anime(M, P) es verdad si P es un titulo de animÃ©
  * luego de la primera ocurrencia de
  * "agregar" o "Agregar".
  */
@@ -998,15 +997,15 @@ parsear_anime([Cabeza | Cola], P) :-
 
 /**
  * obtener_anime/2
- * obtener_anime(M, P) es verdad si P es el título de un anime,
- * que será la primera subcadena de palabras capitalizadas.
+ * obtener_anime(M, P) es verdad si P es el tÃ­tulo de un anime,
+ * que serÃ¡ la primera subcadena de palabras capitalizadas.
  */
 
 % Final de string
 obtener_anime([], [], Parseando) :-
 	Parseando is 1.
 
-% si ya se terminó de parsear
+% si ya se terminÃ³ de parsear
 obtener_anime([Cabeza | _], [], 1) :-
 	cabeza_string(Cabeza, C),
 	\+(es_mayuscula(C)).
@@ -1026,7 +1025,7 @@ obtener_anime([Cabeza | Cola], [H | T], _) :-
  * listar_por_rating_desde_mensaje/1
  *
  * listar_por_rating_desde_mensaje(M) recibe un string (frase) en M e imprime
- * todos los animé cuyo rating corresponda a lo solicitado en la frase M,
+ * todos los animÃ© cuyo rating corresponda a lo solicitado en la frase M,
  * o un mensaje adecuado si no existe ninguno en la base de datos.
  */
 listar_por_rating_desde_mensaje(M):-
@@ -1034,18 +1033,18 @@ listar_por_rating_desde_mensaje(M):-
 	(
 		(
 			existe_anime_con_num_rating(L), !,
-			imprimir("Yuki:- ¿Por su rating? Creo que te puedo ayudar con eso, déjame pensar."),
+			imprimir("Yuki:- Â¿Por su rating? Creo que te puedo ayudar con eso, dÃ©jame pensar."),
 			imprimir_anime_por_rating(L),
-			imprimir("Yuki:- No tengo más que decirte. Acepta mis recomendaciones.")
+			imprimir("Yuki:- No tengo mÃ¡s que decirte. Acepta mis recomendaciones.")
 		);
-		imprimir("Yuki:- Aún no conozco tantos animé como para darte una respuesta. ¿Me ayudas con eso?")
+		imprimir("Yuki:- AÃºn no conozco tantos animÃ© como para darte una respuesta. Â¿Me ayudas con eso?")
 	),
 	fail.
 
 /**
  * listar_rating_alto_popularidad_baja/0
  *
- * listar_rating_alto_popularidad_baja imprime en pantalla las sugerencias de animé
+ * listar_rating_alto_popularidad_baja imprime en pantalla las sugerencias de animÃ©
  * que tengan rating alto (definido como ratings en el rango [4, 5], ambos inclusive) y
  * popularidad baja (definido como valores de popularidad en el rango [1, 4], ambos inclusive).
  */
@@ -1067,16 +1066,16 @@ listar_rating_alto_popularidad_baja:-
 	union(PSU2, PS4, PSU),
 	union(RS1, RS2, RSU),
 	intersection(PSU, RSU, L),
-	imprimir("Yuki:- Ah, ¿quieres ver de esas series que son super buenas pero no han sido vistas por tanta gente?"),
+	imprimir("Yuki:- Ah, Â¿quieres ver de esas series que son super buenas pero no han sido vistas por tanta gente?"),
 	imprimir_sugerencias_de_anime(L),
-	imprimir("Yuki:- Tengo eso por ahora. ¿Qué opinas? ¡Míralas y cuéntame luego!"),
+	imprimir("Yuki:- Tengo eso por ahora. Â¿QuÃ© opinas? Â¡MÃ­ralas y cuÃ©ntame luego!"),
 	fail.
 
 /**
  * filtrar_anime_genero/2
  *
- * filtrar_anime_genero(G, L), para una lista de géneros G, unifica en L todos los
- * animé que pertenecen a al menos algún género perteneciente a G.
+ * filtrar_anime_genero(G, L), para una lista de gÃ©neros G, unifica en L todos los
+ * animÃ© que pertenecen a al menos algÃºn gÃ©nero perteneciente a G.
  */
 filtrar_anime_genero(G, L):-
 	findall(X, and(generoAnime(X, G1), intersection(G1, G, Gi), length(Gi, Largo), Largo > 0), L).
@@ -1086,7 +1085,7 @@ filtrar_anime_genero(G, L):-
  *
  * filtrar_lista_orden(L0, O, Lf), dado un orden O ("mayor" o "menor", por defecto asume "mayor"),
  * ordena los elementos de la lista L0 en el orden introducido, ASUMIENDO que la lista L0 a primeras
- * está ordenada de mayor a menor.
+ * estÃ¡ ordenada de mayor a menor.
  */
 filtrar_lista_orden(L0, "menor", Lf):- Lf = L0.
 filtrar_lista_orden(L0, _, Lf):- reverse(L0, Lf).
@@ -1094,8 +1093,8 @@ filtrar_lista_orden(L0, _, Lf):- reverse(L0, Lf).
 /**
  * filtrar_lista_clasificacion/3
  *
- * filtrar_lista_clasificacion(L0, C, Lf) toma una lista inicial de animé,
- * los ordena de mayor a menor según un criterio C y unifica la nueva lista
+ * filtrar_lista_clasificacion(L0, C, Lf) toma una lista inicial de animÃ©,
+ * los ordena de mayor a menor segÃºn un criterio C y unifica la nueva lista
  * de orden en Lf.
  *
  * NOTA: Se crea un predicado por cada criterio de filtrado posible. Se asume
@@ -1163,8 +1162,8 @@ filtrar_lista_clasificacion(L0, _, Lf):-
 /**
  * consultar_anime_por_orden/1
  *
- * consultar_anime_por_orden(M) interpreta la frase M como una consulta de animé
- * por géneros, según un criterio de clasificación y con un orden dado (por defecto,
+ * consultar_anime_por_orden(M) interpreta la frase M como una consulta de animÃ©
+ * por gÃ©neros, segÃºn un criterio de clasificaciÃ³n y con un orden dado (por defecto,
  * el criterio es 'rating' y el orden de 'mayor' a menor), y muestra las sugerencias
  * en pantalla.
  */
@@ -1181,11 +1180,11 @@ consultar_anime_por_orden(M):-
 		(
 			Tam > 0,
 			imprimir_sugerencias_de_anime(Lf),
-			imprimir("Yuki:- ¿Qué tal te parecen mis sugerencias?")
+			imprimir("Yuki:- Â¿QuÃ© tal te parecen mis sugerencias?")
 		);
 		(
 			Tam == 0,
-			imprimir("Yuki:- No encontré animé con tus filtros de búsqueda. ¿Me ayudas con eso?")
+			imprimir("Yuki:- No encontrÃ© animÃ© con tus filtros de bÃºsqueda. Â¿Me ayudas con eso?")
 		)
 	),
 	fail.
@@ -1193,12 +1192,12 @@ consultar_anime_por_orden(M):-
 /**
  * listar_por_genero/1
  *
- * listar_por_genero(M) interpreta en la frase M uno o varios géneros de animé, halla
- * los animé que pertenezcan a alguno de estos géneros (de manera inclusiva, basta con que
+ * listar_por_genero(M) interpreta en la frase M uno o varios gÃ©neros de animÃ©, halla
+ * los animÃ© que pertenezcan a alguno de estos gÃ©neros (de manera inclusiva, basta con que
  * pertenezca a uno de ellos para ser considerado) y los imprime como sugerencias.
  */
 listar_por_genero(M):-
-	imprimir("Yuki:- Veamos qué puedo hacer por ti. Si me quieres ayudar, ¡alza tus manos al cielo!"),
+	imprimir("Yuki:- Veamos quÃ© puedo hacer por ti. Si me quieres ayudar, Â¡alza tus manos al cielo!"),
 	parsear_generos(M, G), !,
 	filtrar_anime_genero(G, Lf),
 	length(Lf, Tam), !,
@@ -1206,11 +1205,11 @@ listar_por_genero(M):-
 		(
 			Tam > 0,
 			imprimir_sugerencias_de_anime(Lf),
-			imprimir("Yuki:- ¡Pero no te encasilles en unos pocos géneros, abre tu mente!")
+			imprimir("Yuki:- Â¡Pero no te encasilles en unos pocos gÃ©neros, abre tu mente!")
 		);
 		(
 			Tam == 0,
-			imprimir("Yuki:- No encontré animé con tus filtros de búsqueda. ¿Me ayudas con eso?")
+			imprimir("Yuki:- No encontrÃ© animÃ© con tus filtros de bÃºsqueda. Â¿Me ayudas con eso?")
 		)
 	),
 	fail.
@@ -1218,13 +1217,13 @@ listar_por_genero(M):-
 /**
  * consultar_anime_por_genero_y_rating/1
  *
- * consultar_anime_por_genero_y_rating(M) interpreta en la frase M uno o varios géneros
- * de animé y un valor de estrellas de rating, halla los animé que pertenezcan a alguno de estos géneros
- * (de manera inclusiva, basta con pertenezca a uno de ellos para ser considerado) y que, además, cuente
+ * consultar_anime_por_genero_y_rating(M) interpreta en la frase M uno o varios gÃ©neros
+ * de animÃ© y un valor de estrellas de rating, halla los animÃ© que pertenezcan a alguno de estos gÃ©neros
+ * (de manera inclusiva, basta con pertenezca a uno de ellos para ser considerado) y que, ademÃ¡s, cuente
  * con la cantidad de estrellas dada, y los imprime como sugerencias.
  */
 consultar_anime_por_genero_y_rating(M):-
-	imprimir("Yuki:- Oh, comprendo. Déjame ver qué puedo responderte, un momento. *sonidos de modem de CANTV*"),
+	imprimir("Yuki:- Oh, comprendo. DÃ©jame ver quÃ© puedo responderte, un momento. *sonidos de modem de CANTV*"),
 	parsear_generos(M, G), !,
 	parsear_estrellas(M, E), !,
 	filtrar_anime_genero(G, L1),
@@ -1234,17 +1233,17 @@ consultar_anime_por_genero_y_rating(M):-
 		(
 			Tam > 0,
 			imprimir_sugerencias_de_anime(Lf),
-			imprimir("Yuki:- ¡Ojalá esto te sirva para que conozcas series nuevas!")
+			imprimir("Yuki:- Â¡OjalÃ¡ esto te sirva para que conozcas series nuevas!")
 		);
 		(
 			Tam == 0,
-			imprimir("Yuki:- No encontré animé con tus filtros de búsqueda. ¿Me ayudas con eso?")
+			imprimir("Yuki:- No encontrÃ© animÃ© con tus filtros de bÃºsqueda. Â¿Me ayudas con eso?")
 		)
 	),
 	fail.
 
 % ==========================================================================
-% Funciones auxiliares de conversación del bot
+% Funciones auxiliares de conversaciÃ³n del bot
 % ==========================================================================
 
 /**
@@ -1262,8 +1261,8 @@ dar_bienvenida:-
  *
  * responder(M) determina si M es un mensaje apropiado de un
  * tema conocido por el bot, responde la entrada dada y, en caso de
- * ser una despedida, termina la ejecución; en cas contrario, falla
- * (para saltar al próximo predicado)
+ * ser una despedida, termina la ejecuciÃ³n; en cas contrario, falla
+ * (para saltar al prÃ³ximo predicado)
  */
 responder(M):-
     obtener_tema(M, T), !,
@@ -1277,7 +1276,7 @@ responder(M):-
 			es_nuevo_anime(M, Titulo),
 			parsear_generos(M, Generos),
 			parsear_estrellas(M, Rating),
-			% Agregamos el animé
+			% Agregamos el animÃ©
 			insertar_espacios(Titulo, TituloString),
 
 			assertz(anime(TituloString)),
@@ -1293,7 +1292,7 @@ responder(M):-
 				not(es_palabra_de("popularidad", M)), assertz(popularidad(TituloString, 1))
 			), !,
 
-			string_concat("Yuki:- Okay, ahora recordaré ", TituloString, Respuesta),
+			string_concat("Yuki:- Okay, ahora recordarÃ© ", TituloString, Respuesta),
 			imprimir(Respuesta),
 			fail
 		);
@@ -1305,7 +1304,7 @@ responder(M):-
 		(T == "genero", listar_por_genero(M));
 	(T == "despedida", halt);
 	(T == "desconocido",
-	 string_concat("Yuki:- No entendí esto: ", M, Mf),
+	 string_concat("Yuki:- No entendÃ­ esto: ", M, Mf),
 	 imprimir(Mf),
 	 fail
 	)
@@ -1318,22 +1317,22 @@ responder(M):-
 /**
  * conversar/0
  *
- * conversar repite en un ciclo infinito (por backtracking) una lógica sencilla
- * de conversación bilateral: se lee un mensaje del usuario y se responde por
+ * conversar repite en un ciclo infinito (por backtracking) una lÃ³gica sencilla
+ * de conversaciÃ³n bilateral: se lee un mensaje del usuario y se responde por
  * parte del bot.
  */
 conversar:-
     repeat,
     imprimir_prompt, % mostramos un prompt decorativo
     leer(M), % leemos la entrada del usuario
-    responder(M). % ejecutamos una acción de acuerdo a lo solicitado
-    % NOTA: reponder/1 termina la ejecución, o falla y asegura el backtracking
+    responder(M). % ejecutamos una acciÃ³n de acuerdo a lo solicitado
+    % NOTA: reponder/1 termina la ejecuciÃ³n, o falla y asegura el backtracking
 
 /**
  * chat/0
  *
  * chat muestra un mensaje de bienvenida en pantalla e inicia
- * el ciclo de la conversación con el bot
+ * el ciclo de la conversaciÃ³n con el bot
  */
 chat:-
     dar_bienvenida,
